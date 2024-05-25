@@ -1,6 +1,7 @@
 package edu.wgu.d387_sample_code.rest;
 
 
+import edu.wgu.d387_sample_code.WelcomeMessage;
 import edu.wgu.d387_sample_code.convertor.*;
 import edu.wgu.d387_sample_code.entity.ReservationEntity;
 import edu.wgu.d387_sample_code.entity.RoomEntity;
@@ -31,6 +32,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -151,6 +153,11 @@ public class ReservationResource {
             long reservationId) {
 
         return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+    }
+    @RequestMapping(path = "/welcomemessage", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ArrayList<String> showWelcomes() {
+        WelcomeMessage welcomeMessage = new WelcomeMessage();
+        return welcomeMessage.getWelcomeMessage();
     }
 
 }

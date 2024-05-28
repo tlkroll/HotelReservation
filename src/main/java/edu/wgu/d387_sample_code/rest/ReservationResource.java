@@ -1,6 +1,7 @@
 package edu.wgu.d387_sample_code.rest;
 
 
+import edu.wgu.d387_sample_code.TimeConverter;
 import edu.wgu.d387_sample_code.WelcomeMessage;
 import edu.wgu.d387_sample_code.convertor.*;
 import edu.wgu.d387_sample_code.entity.ReservationEntity;
@@ -158,6 +159,11 @@ public class ReservationResource {
     public ArrayList<String> showWelcomes() {
         WelcomeMessage welcomeMessage = new WelcomeMessage();
         return welcomeMessage.getWelcomeMessage();
+    }
+    @RequestMapping(path = "/presentation", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ArrayList<String> displayTimes() {
+        TimeConverter timeConverter = new TimeConverter();
+        return timeConverter.getTime();
     }
 
 }

@@ -19,6 +19,7 @@ This is an application for a fictional hotel created using a Spring framework wi
 - <b>Full Stack Development</b>
 - <b>Database Management</b>
 - <b>Multithreading</b>
+- <b>REST API</b>
 
 <h2>Requirements followed for this project</h2>
 
